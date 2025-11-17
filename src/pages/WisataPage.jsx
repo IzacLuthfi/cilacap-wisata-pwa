@@ -1,56 +1,30 @@
-import { WisataData } from "../data/wisata";
-
-export default function WisataPage({ onSelect }) {
+export default function WisataPage() {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Daftar Wisata</h1>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6 text-blue-700">
+        Kategori Wisata Cilacap
+      </h1>
 
-      {/* PANTAI */}
-      <h2 className="text-xl font-semibold mb-2">Wisata Pantai</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {WisataData.pantai.list.map((item) => (
-          <div
-            key={item.id}
-            className="border rounded p-3 cursor-pointer"
-            onClick={() => onSelect(item.id)}
-          >
-            <img src={item.gambar} className="rounded mb-2" />
-            <h3 className="font-bold">{item.nama}</h3>
-            <p className="text-sm text-gray-600">{item.deskripsi}</p>
-          </div>
-        ))}
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      {/* SEJARAH */}
-      <h2 className="text-xl font-semibold mt-6 mb-2">Wisata Sejarah</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {WisataData.sejarah.list.map((item) => (
-          <div
-            key={item.id}
-            className="border rounded p-3 cursor-pointer"
-            onClick={() => onSelect(item.id)}
-          >
-            <img src={item.gambar} className="rounded mb-2" />
-            <h3 className="font-bold">{item.nama}</h3>
-            <p className="text-sm text-gray-600">{item.deskripsi}</p>
-          </div>
-        ))}
-      </div>
+        {/* Pantai */}
+        <div className="p-5 bg-blue-100 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition cursor-pointer">
+          <h2 className="text-xl font-bold">🏖️ Wisata Pantai</h2>
+          <p className="text-gray-700">Kategori wisata pantai di Cilacap.</p>
+        </div>
 
-      {/* PULAU */}
-      <h2 className="text-xl font-semibold mt-6 mb-2">Wisata Pulau</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {WisataData.pulau.list.map((item) => (
-          <div
-            key={item.id}
-            className="border rounded p-3 cursor-pointer"
-            onClick={() => onSelect(item.id)}
-          >
-            <img src={item.gambar} className="rounded mb-2" />
-            <h3 className="font-bold">{item.nama}</h3>
-            <p className="text-sm text-gray-600">{item.deskripsi}</p>
-          </div>
-        ))}
+        {/* Pulau */}
+        <div className="p-5 bg-green-100 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition cursor-pointer">
+          <h2 className="text-xl font-bold">🏝️ Wisata Pulau</h2>
+          <p className="text-gray-700">Kategori wisata pulau di Cilacap.</p>
+        </div>
+
+        {/* Sejarah */}
+        <div className="p-5 bg-yellow-100 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition cursor-pointer">
+          <h2 className="text-xl font-bold">🏯 Wisata Sejarah</h2>
+          <p className="text-gray-700">Kategori wisata sejarah di Cilacap.</p>
+        </div>
+
       </div>
     </div>
   );
